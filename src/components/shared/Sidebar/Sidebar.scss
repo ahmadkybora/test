@@ -1,0 +1,74 @@
+@mixin themeColor {
+    background-color: rgb(227, 255, 255);
+    color: rgb(0, 156, 156);
+}
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 220px;
+    height: 100vh;
+    background-color: #fff;
+    border-right: 1px solid rgb(239, 239, 239);
+    transition: 0.3s ease all;
+    color: rgb(82, 82, 82);
+
+    &__main-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        svg {
+            color: rgb(0, 156, 156);
+        }
+        h3 {
+            padding-left: 5px;
+        }
+    }
+
+    &__menu-items {
+        position: relative;
+        list-style-type: none;
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            padding: 10px;
+        }
+        span {
+            flex: 1;
+            margin: 0px 10px;
+        }
+        &:hover {
+            @include themeColor;
+        }
+    }
+
+    &__menu-items-hover {
+        @include themeColor;
+    }
+    
+    &__dropdown {
+        a {
+            @include themeColor;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            span {
+                flex: 1;
+                margin: 0px 10px;
+            }
+            &:hover {
+                background-color: rgb(200, 255, 255);
+                color: rgb(0, 156, 156);
+            }
+        }
+    }
+}
